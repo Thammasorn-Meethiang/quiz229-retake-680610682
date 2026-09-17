@@ -31,7 +31,7 @@ router.get("/:userId", authenticateToken, checkRoleMiddleware, (req: CustomReque
 		if (!user) {
 			return res.status(403).json({
 				success: false,
-				message: `Forbidden Access`,
+				message: "Forbidden Access",
 			});
 		}
 		
