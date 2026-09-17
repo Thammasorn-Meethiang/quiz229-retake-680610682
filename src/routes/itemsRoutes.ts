@@ -29,9 +29,9 @@ router.get("/:userId", authenticateToken, checkRoleMiddleware, (req: CustomReque
 		const user = users.find((u) => u.userId === user_id_in_params);
 		
 		if (!user) {
-			return res.status(404).json({
+			return res.status(403).json({
 				success: false,
-				message: `item for user ID ${user_id_in_params} not found`,
+				message: `Forbidden Access`,
 			});
 		}
 		
